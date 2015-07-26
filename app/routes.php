@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('layouts.main');
-});
+Route::get('/', 'HomeController@initialLoad');
+Route::get('/home', 'HomeController@initialLoad');

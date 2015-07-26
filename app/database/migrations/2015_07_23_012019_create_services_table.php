@@ -2,9 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class CreateServicesTable extends Migration {
 
+	use SoftDeletingTrait;
+
+    protected $dates = ['deleted_at'];
 	/**
 	 * Run the migrations.
 	 *
@@ -16,10 +20,11 @@ class CreateServicesTable extends Migration {
 		{
 			$table->increments( 'id' );
 			$table->string( 'service', 100 );
-			$table->string( 'description', 300 );
-			$table->string( 'image', 150 );
+			$table->text( 'description' );
+			$table->string( 'image', 300 );
 			$table->integer( 'order', false );
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

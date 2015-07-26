@@ -11,6 +11,6 @@ class Speciality extends \Eloquent {
 
 	public function doctor_speciality()
 	{
-		return $this->hasMany('DoctorSpeciality');
+		return $this->belongsToMany('Doctor');
 	}
 }

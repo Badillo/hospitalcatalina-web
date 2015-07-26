@@ -2,9 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class CreateNavigationMenusTable extends Migration {
 
+	use SoftDeletingTrait;
+
+    protected $dates = ['deleted_at'];
 	/**
 	 * Run the migrations.
 	 *
@@ -17,11 +21,12 @@ class CreateNavigationMenusTable extends Migration {
 			$table->increments( 'id' );
 			$table->string( 'menu', 50 );
 			$table->string( 'title', 100 );
-			$table->string( 'text', 300 );
-			$table->string( 'link', 150 );
-			$table->string( 'image_link', 150 );
+			$table->text( 'text' );
+			$table->string( 'link', 300 );
+			$table->string( 'image_link', 300 );
 			$table->integer( 'order', false );
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

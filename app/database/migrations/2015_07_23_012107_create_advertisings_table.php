@@ -16,7 +16,8 @@ class CreateAdvertisingsTable extends Migration {
 		{
 			$table->increments( 'id' );
 			$table->string( 'name', 100 );
-			$table->string( 'image', 100 );
+			$table->string( 'image', 300 );
+			$table->string( 'link', 300 );
 			$table->string( 'position', 10 );
 			$table->integer( 'order', false );
 			$table->timestamps();

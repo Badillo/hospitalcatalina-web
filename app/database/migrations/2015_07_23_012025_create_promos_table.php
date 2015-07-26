@@ -15,8 +15,8 @@ class CreatePromosTable extends Migration {
 		Schema::create('promos', function(Blueprint $table)
 		{
 			$table->increments( 'id');
-			$table->string( 'link', 150 );
-			$table->string( 'description', 150 );
+			$table->string( 'link', 300 );
+			$table->text( 'description' );
 			$table->integer( 'speciality_id', false );
 			$table->timestamps();
 		});

@@ -2,9 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class CreateDoctorsTable extends Migration {
 
+	use SoftDeletingTrait;
+
+    protected $dates = ['deleted_at'];
 	/**
 	 * Run the migrations.
 	 *
@@ -19,9 +23,10 @@ class CreateDoctorsTable extends Migration {
 			$table->string( 'phone', 20 );
 			$table->string( 'email', 50 );
 			$table->string( 'picture', 100 );
-			$table->string( 'website', 150 );
-			$table->string( 'comment', 300 );
+			$table->string( 'website', 300 );
+			$table->text( 'comment' );
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

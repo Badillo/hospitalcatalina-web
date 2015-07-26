@@ -20,4 +20,25 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+	public function initialLoad()
+	{
+		$advertisings = Advertising::orderBy('order', 'asc')->get();
+		$budgets = Budget::orderBy('order', 'asc')->get();
+		$doctors = Doctor::all();
+		$nav_menus = NavigationMenu::orderBy('order', 'asc')->get();
+		$promos = Promo::all();
+		$services = Service::orderBy('order', 'asc')->get();
+		$slider_images = SliderImage::all();
+		$specialities = Speciality::all();
+		
+		return View::make('layouts.main', array( 'advertisings' => $advertisings,
+												 'budgets' => $budgets,
+												 'doctors' => $doctors,
+												 'nav_menus' => $nav_menus,
+												 'promos' => $promos,
+												 'services' => $services,
+												 'slider_images' => $slider_images,
+												 'specialities' => $specialities, ) );
+	}
+
 }

@@ -16,8 +16,8 @@ class CreateBudgetsTable extends Migration {
 		{
 			$table->increments( 'id' );
 			$table->string( 'name', 100 );
-			$table->string( 'description', 200 );
-			$table->string( 'image', 150 );
+			$table->text( 'description' );
+			$table->string( 'image', 300 );
 			$table->double( 'price', 10, 4 );
 			$table->integer( 'order', false );
 			$table->timestamps();
