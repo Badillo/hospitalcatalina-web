@@ -133,10 +133,21 @@
                         <div class="header-section">
                                 <!-- With Animation and no Info Carousel Block -->
                                 <div class="row">
-                                    <div class="col-xs-5">
+                                    <div class="col-sm-3">
+                                        <h2 class="text-center"><strong>Misión</strong></h2><br>
+                                        <div class="text-justify">
+                                            <p>
+                                                Brindamos servicios especializados de salud otorgados por capital humano 
+                                                comprometido y capacitado, en un entorno de trabajo digno, basados en un 
+                                                sistema de calidad y seguridad a nuestros usuarios, con una atención 
+                                                confiable y recomendable.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 ">
                                         <div class="block">
                                             <!-- With Animation and no Info Carousel Content -->
-                                            <div id="main_carousel" class="carousel slide">
+                                            <div id="main_carousel" class="carousel slide center-block">
                                                 <!-- Wrapper for slides -->
                                                 <div class="carousel-inner">
                                                     
@@ -154,10 +165,10 @@
                                                 <!-- END Wrapper for slides -->
 
                                                 <!-- Controls -->
-                                                <a class="left carousel-control" href="#main_carousel" data-slide="prev">
+                                                <a id="slider-left" class="left carousel-control" href="#main_carousel" data-slide="prev">
                                                     <span><i class="fa fa-chevron-left"></i></span>
                                                 </a>
-                                                <a class="right carousel-control" href="#main_carousel" data-slide="next">
+                                                <a id="slider-right" class="right carousel-control" href="#main_carousel" data-slide="next">
                                                     <span><i class="fa fa-chevron-right"></i></span>
                                                 </a>
                                                 <!-- END Controls -->
@@ -166,7 +177,7 @@
                                         </div>                            
                                     <!-- END Alternative Carousel -->
                                     </div>
-                                    <div class="col-xs-3">
+                                    <div class="col-sm-3">
                                         <h2 class="text-center"><strong>Visión</strong></h2><br>
                                         <div class="text-justify">
                                             <p>
@@ -176,18 +187,6 @@
                                                 sus usuarios.
                                             </p>
                                         </div>
-                                        <h2 class="text-center"><strong>Misión</strong></h2><br>
-                                        <div class="text-justify">
-                                            <p>
-                                                Brindamos servicios especializados de salud otorgados por capital humano 
-                                                comprometido y capacitado, en un entorno de trabajo digno, basados en un 
-                                                sistema de calidad y seguridad a nuestros usuarios, con una atención 
-                                                confiable y recomendable.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        {{ HTML::image('img/resources/misc/cert.jpg', 'Hospital Santa Catalina', array( 'class' => 'img-responsive' ) ) }}
                                     </div>
                                 </div>
                                 
@@ -204,7 +203,7 @@
                                 <!-- Horizontal Menu Toggle + Alternative Sidebar Toggle Button, Visible only in small screens (< 768px) -->
                                 <ul class="nav navbar-nav-custom pull-right visible-xs text-center">
                                     <li>
-                                        <a href="javascript:void(0)" data-toggle="collapse" data-target="#horizontal-menu-collapse">Desplegar Menu</a>
+                                        <a href="javascript:void(0)" data-toggle="collapse" data-target="#horizontal-menu-collapse">Desplegar Menu Superior</a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');">
@@ -266,6 +265,7 @@
                                                 {{ HTML::image('img/resources/misc/logo.jpg', 'Hospital Santa Catalina', array( 'class' => 'img-responsive' ) ) }}
                                                 <br>
                                                 <div class="sub-header"></div>
+                                                {{ HTML::image('img/resources/misc/cert.jpg', 'Hospital Santa Catalina', array( 'class' => 'img-responsive center-block' ) ) }}
                                                 <p>
                                                     Somos un Hospital dentro del proceso de certificación que da cuenta de como aseguramos la calidad y seguridad en la atención 
                                                     del paciente y su familia,dentro de estándares normativos como un que hacer cotidiano y como parte de nuestra cultura 
@@ -330,11 +330,11 @@
                                         <div class="block block-alt-noborder">
                                             @foreach($services as $service)  
                                                 <div class="row">
-                                                    <div class="col-xs-8">
+                                                    <div class="col-sm-8">
                                                         <h1>{{ $service->service }}</h1>
                                                         <p>{{ $service->description }}</p>    
                                                     </div>
-                                                    <div class="col-xs-4">
+                                                    <div class="col-sm-4">
                                                         {{ HTML::image( $service->image, $service->service, array( 'class' => 'img-responsive') ) }}
                                                     </div>
                                                 </div>
@@ -351,14 +351,14 @@
                                         <div class="block block-alt-noborder">
                                             @foreach($budgets as $budget)  
                                                 <div class="row">
-                                                    <div class="col-xs-7">
+                                                    <div class="col-sm-7">
                                                         <h1>{{ $budget->name }}</h1>
                                                         <p>{{ $budget->description }}</p>    
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         {{ HTML::image( $budget->image, $budget->service, array( 'class' => 'img-responsive') ) }}
                                                     </div>
-                                                    <div class="col-xs-2">
+                                                    <div class="col-sm-2">
                                                         <i class="gi gi-usd"></i><span class="text-success">{{ $budget->price }}</span>
                                                     </div>
                                                 </div>
@@ -407,8 +407,41 @@
                                     <!-- Article Content -->
                                         <!-- Article Block -->
                                         <div class="block block-alt-noborder">
- 
+                                            <!-- Datatables Content -->
+                                            <div class="table-responsive">
+                                                <table id="doctors-datatable" class="table table-vcenter table-condensed table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">Nombre</th>
+                                                            <th class="text-center">Teléfono</th>
+                                                            <th class="text-center">Email</th>
+                                                            <th class="text-center">Sitio Web</th>
+                                                            <th class="text-center">Comentarios</th>
+                                                            <th class="text-center">Especialidades</th>
+                                                            <th class="text-center">Fotografía</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach($doctors as $doctor)
+                                                            <tr>
+                                                                <td class="text-center">{{ $doctor->name }}</td>
+                                                                <td class="text-center">{{ $doctor->phone }}</td>
+                                                                <td class="text-center">{{ $doctor->email }}</td>
+                                                                <td class="text-center">{{ $doctor->website }}</td>
+                                                                <td class="text-center">{{ $doctor->comment }}</td>
+                                                                <td>
+                                                                    @foreach($doctor->speciality as $speciality)
+                                                                        <span class="label label-primary">{{ $speciality->name }}</span>
+                                                                    @endforeach
+                                                                </td>
+                                                                <td class="text-center">{{ HTML::image( $doctor->picture, 'Foto', array( 'class' => 'img-responsive' ) ) }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
+                                        <!-- END Datatables Content -->
                                         <!-- END Article Block -->
                                     <!-- END Article Content -->
                                 </div>
@@ -441,7 +474,7 @@
                                         <!-- Article Block -->
                                         <div class="block block-alt-noborder">
                                             <div class="row">
-                                                <div class="col-xs-6">
+                                                <div class="col-sm-6">
                                                     <!-- Basic Form Elements Content -->
                                                     <form action="page_forms_general.html" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
                                                         <div class="form-group">
@@ -483,7 +516,7 @@
                                                     </form>
                                                     <!-- END Basic Form Elements Content -->
                                                 </div>
-                                                <div class="col-xs-6">
+                                                <div class="col-sm-6">
                                                     <iframe style='width: 100%; height: 500px;' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="maps"  src="https://maps.google.com/maps/ms?msa=0&amp;msid=204252204387720342702.0004dcc350667ab609f20&amp;ie=UTF8&amp;t=m&amp;ll=20.682628,-103.3281&amp;spn=0.004818,0.006866&amp;z=17&amp;iwloc=0004dcc35b2eed56e277f&amp;output=embed"></iframe>
                                                     <br>
                                                     <small>
@@ -507,21 +540,21 @@
                 <!-- END Page Content -->
 
                 <!-- Footer -->
-                <footer class="clearfix">
+                <footer class="clearfix hidden-xs">
                     <div class="row">
-                        <div class="col-xs-5 text-center">
+                        <div class="col-sm-5 text-center">
                             <h6>Hospital de Especialidades Catalina</h6>
                             <p>Pablo Valdéz No. 719 Col. San Juan de Dios Guadalajara, Jal.</p>
                         </div>
-                        <div class="col-xs-1 text-center">
+                        <div class="col-sm-1 text-center">
                             <h6>Telefonos</h6>
                             <p>3883-1080<br>3617-8652</p>
                         </div>
-                        <div class="col-xs-4 text-center">
+                        <div class="col-sm-4 text-center">
                             <h6>Contacto <i class="hi hi-envelope"></i></h6>
                             <p>promocionydifusion@hospitalcatalina.com</p>
                         </div>
-                        <div class="col-xs-2 text-center">
+                        <div class="col-sm-2 text-center">
                             <h6>Redes Sociales</h6>
                             <p>
                                 <a href="{{ URL::to('https://www.facebook.com/hospitalcatalina') }}" target="_blank"><i class="si si-facebook fa-3x text-info"></i></a>&nbsp;
@@ -531,7 +564,7 @@
                     </div>
                     <!--
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-sm-12">
                             <div class="pull-right">
                                 Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://www.hospitalcatalina.com" target="_blank">Mario Badillo</a>    
                             </div>
@@ -555,11 +588,16 @@
         <script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
 
         <!-- Bootstrap.js, Jquery plugins and Custom JS code -->
-        {{ HTML::script('js/vendor/bootstrap.min.js') }}
-        {{ HTML::script('js/plugins.js') }}
-        {{ HTML::script('js/app.js') }}
+        {{ HTML::script( 'js/vendor/bootstrap.min.js' ) }}
+        {{ HTML::script( 'js/plugins.js' ) }}
+        {{ HTML::script( 'js/app.js' ) }}
 
-        @section('scripts')
-        @show
+        {{ HTML::script( 'js/pages/tablesDatatables.js' ) }}
+        <script>
+            $(function(){ 
+                TablesDatatables.init(); 
+                setTimeout(function(){ $("#slider-right").trigger("click"); }, 8000);
+            });
+            </script>
     </body>
 </html>

@@ -1,10 +1,10 @@
 <?php
 
-class API extends \BaseController {
+class CrudController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /api
+	 * GET /crud
 	 *
 	 * @return Response
 	 */
@@ -15,7 +15,7 @@ class API extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /api/create
+	 * GET /crud/create
 	 *
 	 * @return Response
 	 */
@@ -26,7 +26,7 @@ class API extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /api
+	 * POST /crud
 	 *
 	 * @return Response
 	 */
@@ -37,7 +37,7 @@ class API extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /api/{id}
+	 * GET /crud/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -49,7 +49,7 @@ class API extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /api/{id}/edit
+	 * GET /crud/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -61,7 +61,7 @@ class API extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /api/{id}
+	 * PUT /crud/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -73,7 +73,7 @@ class API extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /api/{id}
+	 * DELETE /crud/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

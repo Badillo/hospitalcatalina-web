@@ -24,7 +24,7 @@ class HomeController extends BaseController {
 	{
 		$advertisings = Advertising::orderBy('order', 'asc')->get();
 		$budgets = Budget::orderBy('order', 'asc')->get();
-		$doctors = Doctor::all();
+		$doctors = Doctor::with('speciality')->get();
 		$nav_menus = NavigationMenu::orderBy('order', 'asc')->get();
 		$promos = Promo::all();
 		$services = Service::orderBy('order', 'asc')->get();
@@ -39,6 +39,13 @@ class HomeController extends BaseController {
 												 'services' => $services,
 												 'slider_images' => $slider_images,
 												 'specialities' => $specialities, ) );
+	}
+
+	public function get_doctors()
+	{
+		$doctors = Doctor::with('speciality')->get();
+		
+		return Response::json( array( 'doctors' => $doctors) );
 	}
 
 }

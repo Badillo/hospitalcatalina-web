@@ -4,7 +4,7 @@ class Doctor extends \Eloquent {
 	protected $fillable = [];
 	protected $table = 'doctors';
 
-	public function doctor_speciality()
+	public function speciality()
 	{
 		return $this->belongsToMany('Speciality');
 	}

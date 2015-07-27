@@ -9,7 +9,7 @@ class Speciality extends \Eloquent {
 		return $this->hasMany('Promo');
 	}
 
-	public function doctor_speciality()
+	public function doctor()
 	{
 		return $this->belongsToMany('Doctor');
 	}

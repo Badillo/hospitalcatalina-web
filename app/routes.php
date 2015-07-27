@@ -12,4 +12,75 @@
 */
 
 Route::get('/', 'HomeController@initialLoad');
-Route::get('/home', 'HomeController@initialLoad');
+
+//Procesa el formulario e identifica al usuario
+
+/*
+Route::post('/admin', ['uses' => 'AuthController@doLogin', 'before' => 'guest']);
+//Desconecta al usuario
+Route::get('/admin', ['uses' => 'AuthController@doLogout', 'before' => 'auth']);
+*/
+
+
+Route::get('/login', function(){
+	return View::make('login');
+});
+
+Route::get('/admin', function(){
+	return View::make('admin.user');
+});
+
+Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
+{
+	Route::get('/ad', function(){
+		return View::make('admin.ad');
+	});
+
+	Route::get('/budget', function(){
+		return View::make('admin.budget');
+	});
+
+	Route::get('/doctor', function(){
+		return View::make('admin.doctor');
+	});
+
+	Route::get('/nav_menu', function(){
+		return View::make('admin.nav_menu');
+	});
+
+	Route::get('/promo', function(){
+		return View::make('admin.promo');
+	});
+
+	Route::get('/service', function(){
+		return View::make('admin.service');
+	});
+	Route::get('/slider', function(){
+		return View::make('admin.slider');
+	});
+	Route::get('/speciality', function(){
+		return View::make('admin.speciality');
+	});
+	Route::get('/user', function(){
+		return View::make('admin.user');
+	});
+
+/*
+	Route::get('/clientes/{cliente}/{reporte}', 'FilesController@getFileNames');
+
+	Route::get('/clientes', function(){
+    	return View::make('clientes');
+	});
+
+    Route::post('/upload-file/{cliente}/{reporte}','FilesController@uploadFile');
+
+    Route::get('/delete_file','FilesController@deleteFile');
+
+    Route::get('/send-email/{cliente}/{reporte}','HomeController@sendEmail');
+*/
+
+});
+
+App::missing( function( $exception ){
+	return Response::view('errors.404');
+});
