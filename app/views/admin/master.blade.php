@@ -41,31 +41,34 @@
                     <div class="sidebar-content">
                         <!-- Brand -->
                         <a class="sidebar-brand active" href="{{ URL::to('/admin/user') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Anuncios</strong>
+                            <strong>Anuncios</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/budget') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Presupuestos</strong>
+                            <strong>Presupuestos</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/doctor') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Medicos</strong>
+                            <strong>Medicos</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/nav_menu') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Menu Superior</strong>
+                            <strong>Menu Superior</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/promo') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Promociones</strong>
+                            <strong>Promociones</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/service') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Servicios</strong>
+                            <strong>Servicios</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/slider') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Imagenes Visor</strong>
+                            <strong>Imagenes Visor</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/speciality') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Especialidades</strong>
+                            <strong>Especialidades</strong>
                         </a>
                         <a class="sidebar-brand" href="{{ URL::to('/admin/user') }}">
-                            <i class="gi gi-globe_af fa-2x"></i><strong>Usuarios</strong>
+                            <strong>Usuarios</strong>
+                        </a>
+                        <a class="sidebar-brand" href="{{ URL::to('/logout') }}">
+                            <strong>Cerrar Sesión</strong>
                         </a>
                     </div>
                     <!-- END Sidebar Content -->

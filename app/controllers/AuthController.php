@@ -17,13 +17,13 @@ class AuthController extends BaseController {
         {
             // Aquí también pueden devolver una llamada a otro controlador o
             // devolver una vista
-            return Redirect::to('/admin');
+            return Redirect::to('/admin/user');
         }
  
         // La autenticación ha fallado re-direccionamos
         // a la página anterior con los datos enviados
         // y con un mensaje de error
-        return Redirect::back()->with('msg', 'Datos incorrectos, vuelve a intentarlo.');
+        return Redirect::back()->with('msg', 'Datos incorrectos, vuelve a intentarlo');
     }
  
     public function doLogout()
@@ -32,7 +32,7 @@ class AuthController extends BaseController {
         Auth::logout();
  
         //Redireccionamos al inicio de la app con un mensaje
-        return Redirect::to('/login')->with('msg', 'Sesión finalizada correctamente.');
+        return Redirect::to('/login')->with('msg-logout', 'Sesión finalizada correctamente.');
     }
  
 }

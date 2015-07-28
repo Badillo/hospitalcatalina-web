@@ -15,23 +15,27 @@ Route::get('/', 'HomeController@initialLoad');
 
 //Procesa el formulario e identifica al usuario
 
-/*
-Route::post('/admin', ['uses' => 'AuthController@doLogin', 'before' => 'guest']);
+Route::get('/login', ['before' => 'check_guest', function(){
+    return View::make('login');
+}]);
+
+Route::post('/logon', ['uses' => 'AuthController@doLogin', 'before' => 'check_guest']);
 //Desconecta al usuario
-Route::get('/admin', ['uses' => 'AuthController@doLogout', 'before' => 'auth']);
+Route::get('/logout', ['uses' => 'AuthController@doLogout', 'before' => 'check_auth']);
+
+
+/*Route::get('/login', function(){
+	return View::make('login');
+});
 */
 
 
-Route::get('/login', function(){
-	return View::make('login');
-});
-
-Route::get('/admin', function(){
-	return View::make('admin.user');
-});
-
-Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
+Route::group(['prefix' => 'admin', 'before' => 'check_auth'], function()
 {
+	Route::get('/', function(){
+		return View::make('admin.user');
+	});
+
 	Route::get('/ad', function(){
 		return View::make('admin.ad');
 	});

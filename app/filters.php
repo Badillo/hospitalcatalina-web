@@ -33,25 +33,18 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
+Route::filter('check_auth', function()
 {
 	if (Auth::guest())
 	{
-		if (Request::ajax())
-		{
-			return Response::make('errors/401', 401);
-		}
-		else
-		{
-			return Redirect::guest('admin');
-		}
+		return Redirect::guest('/login');
 	}
 });
 
 
 Route::filter('auth.basic', function()
 {
-	return Auth::basic();
+	return Auth::basic('username');
 });
 
 /*
@@ -65,9 +58,12 @@ Route::filter('auth.basic', function()
 |
 */
 
-Route::filter('guest', function()
+Route::filter('check_guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check()) 
+	{
+		return Redirect::to('/admin/user');
+	}
 });
 
 /*
