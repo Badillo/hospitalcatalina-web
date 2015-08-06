@@ -81,7 +81,7 @@
             <div id="main-container">
                 <!-- Page content -->
                 <div id="page-content">
-                    
+
 
                     <!-- Dummy Content -->
                     <div class="block full block-alt-noborder">
@@ -104,21 +104,21 @@
                             <!-- Search Styles Title -->
                             <div class="block-title">
                                 <ul class="nav nav-tabs" data-toggle="tabs">
-                                    <li class="active"><a href="#tab-add">Agregar</a></li>
+                                    <li><a href="#tab-add">Agregar</a></li>
                                     <li><a href="#tab-edit">Editar</a></li>
-                                    <li><a href="#tab-delete">Eliminar/Desactivar</a></li>                                    
+                                    <li><a href="#tab-delete">Eliminar/Desactivar</a></li>
                                 </ul>
                                 @section('title')
 
                                 @show
-                                <span class='pull-right'>Anuncios</span>
+
                             </div>
                             <!-- END Search Styles Title -->
 
                             <!-- Search Styles Content -->
                             <div class="tab-content">
                                 @yield('menu')
-                                
+
                             </div>
                             <!-- END Search Styles Content -->
                             </div>
@@ -134,8 +134,8 @@
         <!-- END Page Container -->
 
         <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
-        <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>                
-        
+        <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
         <!-- END User Settings -->
 
         <!-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) -->
@@ -146,5 +146,12 @@
         {{ HTML::script( 'js/vendor/bootstrap.min.js' ) }}
         {{ HTML::script( 'js/plugins.js' ) }}
         {{ HTML::script( 'js/app.js' ) }}
+
+        {{ HTML::script('js/data/data.js') }}
+
+        <script>
+            var main_path = '{{ URL::to("/") }}';
+            $(function(){ Control.init(); });
+        </script>
     </body>
 </html>
