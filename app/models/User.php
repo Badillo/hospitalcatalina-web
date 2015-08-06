@@ -12,7 +12,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     use UserTrait, RemindableTrait;
     use SoftDeletingTrait;
 
-    public $errors;
+    private $errors;
 
     public function isValid($data)
     {
@@ -30,6 +30,26 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         }
 
         return true;
+    }
+
+    public function getListErrors()
+    {
+        $listErrors = '<ul>';
+        $error      = json_decode($this->errors);
+        foreach ($error as $key => $value) {
+            foreach ($value as $index => $valor) {
+                $listErrors .= "<li>" . $valor . "</li>";
+            }
+
+        }
+        $listErrors .= '</ul>';
+
+        return $listErrors;
+    }
+
+    public function getErrors()
+    {
+        return $this->errors;
     }
 
     protected $dates = ['deleted_at'];

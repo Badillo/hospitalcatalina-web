@@ -24,42 +24,27 @@ var Control = function() {
                     'password': $("#password").val(),
                     'password_confirmation': $("#password_confirmation").val()
                 };
-
-                console.log(data);
-                /*
-                data.push({
-                    'name': $("#name").val(),
-                    'username': $("#username").val(),
-                    'password': $("#password").val(),
-                    'password_confirmation': $("#password_confirmation").val()
-                });
-
-                /*
-                var form = new FormData();
-                form.append('user_data', data);*/
-
+                
                 $.ajax({
-                        url: main_path + "/admin/user/save",
-                        type: 'post',
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        data: data,
-                        dataType: "json"
-                    }).done(function() {
-                        $.bootstrapGrowl('Datos Almancenados!', {
-                            type: "success",
-                            delay: 4500,
-                            allow_dismiss: true
-                        });
-                    })
-                    .fail(function(data) {
-                        $.bootstrapGrowl('Ocurrio un error, no se a guardado la informacion' + data.error, {
-                            type: "danger",
-                            delay: 4500,
-                            allow_dismiss: true
-                        });
+                    url: main_path + "/admin/user/save",
+                    type: 'post',
+                    data: data,
+                    processData: true
+                }).done(function() {
+                    $.bootstrapGrowl('Datos Almancenados!', {
+                        type: "success",
+                        delay: 4500,
+                        allow_dismiss: true
                     });
+                })
+                .fail(function(data) {
+                    $.bootstrapGrowl('Ocurrio un error, no se ha guardado la informacion\n' + data.responseJSON.dataError, {
+                        type: "danger",
+                        delay: 7000,
+                        allow_dismiss: true
+                    });
+                });
+                
             });
         }
     };

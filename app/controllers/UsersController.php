@@ -36,15 +36,11 @@ class UsersController extends \BaseController
     {
         $data = Input::all();
 
-        return $data;
         $user = new User();
 
-        //$user_data = json_decode($data);
-        /*
         if (!$user->isValid($data)) {
-        return Response::json(array('status' => false, 'error' => $user->errors), 500);
+            return Response::json(array('status' => false, 'dataError' => $user->getListErrors()), 500);
         }
-         */
 
         $user->name     = $data['name'];
         $user->username = $data['username'];
