@@ -23,8 +23,10 @@ class UsersController extends \BaseController
      */
     public function create()
     {
+        $users = User::all();
 
-        return View::make('users.create');
+        return View::make('admin.user', array('users' => $users));
+
     }
 
     /**
@@ -57,12 +59,12 @@ class UsersController extends \BaseController
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show()
     {
+        $id   = Input::all()['id'];
+        $user = User::find($id);
 
-        $user = User::findOrFail($id);
-
-        return View::make('users.show', compact('user'));
+        return Response::json(array('status' => true, 'data' => $user));
     }
 
     /**

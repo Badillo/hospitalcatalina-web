@@ -106,7 +106,6 @@
                                 <ul class="nav nav-tabs" data-toggle="tabs">
                                     <li><a href="#tab-add">Agregar</a></li>
                                     <li><a href="#tab-edit">Editar</a></li>
-                                    <li><a href="#tab-delete">Eliminar/Desactivar</a></li>
                                 </ul>
                                 @section('title')
 
@@ -148,6 +147,7 @@
         {{ HTML::script( 'js/app.js' ) }}
 
         {{ HTML::script('js/data/data.js') }}
+        {{ HTML::script('js/common.js') }}
 
         <script>
             var main_path = '{{ URL::to("/") }}';

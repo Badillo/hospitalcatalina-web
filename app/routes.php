@@ -62,14 +62,12 @@ Route::group(['prefix' => 'admin', 'before' => 'check_auth'], function () {
     Route::get('/speciality', function () {
         return View::make('admin.speciality');
     });
-    Route::get('/user', function () {
-        return View::make('admin.user');
-    });
+    Route::get('/user', 'UsersController@create');
 
     Route::group(['prefix' => 'user'], function () {
         Route::post('/save', 'UsersController@store');
         Route::post('/update', 'UsersController@update');
-        Route::post('/edit', 'UsersController@edit');
+        Route::post('/show', 'UsersController@show');
         Route::post('/delete', 'UsersController@destroy');
     });
 

@@ -45,25 +45,25 @@
                             <h4 class='modal-title' id='{{ $menu->menu }}_modal'><strong>{{ $menu->title }}</strong></h4>
                         </div>
                         <div class='modal-body'>
-        
+
                             @if($menu->image_link != '')
                                 {{ HTML::image($menu->image_link) }}
                             @endif
                           <p>{{ $menu->text }}</p>
                         </div>
                         <div class='modal-footer'>
-        
+
                             @if($menu->link != '')
                                 {{ "<a class='btn btn-default pull-left' role='button' href='". URL::to($menu->link) ."' target='_blank'>Visitar Enlace</a>" }}
                             @endif
-        
+
                             <button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button>
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
-        
+
     </div>
 
     <!-- End of Modals Section-->
@@ -81,7 +81,7 @@
                             @if($ad->position == 'right')
                                 {{ "<a href='". URL::to($ad->link) . "'>".HTML::image($ad->image, $ad->name, array( 'class' => 'img-responsive') ) ."</a>" }}
                             @endif
-                        @endforeach                   
+                        @endforeach
                     </div>
                     <!-- END Sidebar Content -->
                 </div>
@@ -104,7 +104,7 @@
                                 {{ "<a href='". URL::to($ad->link) . "'>".HTML::image($ad->image, $ad->name, array( 'class' => 'img-responsive') ) ."</a>" }}
                             @endif
 
-                        @endforeach                   
+                        @endforeach
                         <!-- END Brand -->
                     </div>
                     <!-- END Sidebar Content -->
@@ -137,9 +137,9 @@
                                         <h2 class="text-center"><strong>Misión</strong></h2><br>
                                         <div class="text-justify">
                                             <p>
-                                                Brindamos servicios especializados de salud otorgados por capital humano 
-                                                comprometido y capacitado, en un entorno de trabajo digno, basados en un 
-                                                sistema de calidad y seguridad a nuestros usuarios, con una atención 
+                                                Brindamos servicios especializados de salud otorgados por capital humano
+                                                comprometido y capacitado, en un entorno de trabajo digno, basados en un
+                                                sistema de calidad y seguridad a nuestros usuarios, con una atención
                                                 confiable y recomendable.
                                             </p>
                                         </div>
@@ -150,12 +150,12 @@
                                             <div id="main_carousel" class="carousel slide center-block">
                                                 <!-- Wrapper for slides -->
                                                 <div class="carousel-inner">
-                                                    
-                                                    <?php $flag = 0 ?>
+
+                                                    <?php $flag = 0?>
                                                     @foreach($slider_images as $slide)
                                                         @if($flag == 0)
                                                             {{ "<div class='active item'>". HTML::image($slide->link, $slide->description, array( 'class' => 'img-responsive') ) ."</div>"}}
-                                                            <?php $flag = 1 ?>
+                                                            <?php $flag = 1?>
                                                         @else
                                                             {{ "<div class='item'>". HTML::image($slide->link, $slide->description, array( 'class' => 'img-responsive') ) ."</div>"}}
                                                         @endif
@@ -174,22 +174,22 @@
                                                 <!-- END Controls -->
                                             </div>
                                             <!-- END With Animation and no Info Carousel Content -->
-                                        </div>                            
+                                        </div>
                                     <!-- END Alternative Carousel -->
                                     </div>
                                     <div class="col-sm-3">
                                         <h2 class="text-center"><strong>Visión</strong></h2><br>
                                         <div class="text-justify">
                                             <p>
-                                                Nos visulaizamos en 2017 Posicionados como un hospital de especialidades, 
-                                                consolidado por su equipo humano, infraestructura, sistema de calidad y 
-                                                seguridad eficiente que genere rentabilidad a sus socios y beneficios a 
+                                                Nos visulaizamos en 2017 Posicionados como un hospital de especialidades,
+                                                consolidado por su equipo humano, infraestructura, sistema de calidad y
+                                                seguridad eficiente que genere rentabilidad a sus socios y beneficios a
                                                 sus usuarios.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                         </div>
                     </div>
                     <!-- END Fixed Top Header + Footer Header -->
@@ -255,25 +255,25 @@
 
                             <!-- Search Styles Content -->
                             <div class="tab-content">
-                                
+
                                 <div class="tab-pane active animation-fadeInQuick" id="tab-home">
                                     <!-- Article Content -->
                                         <!-- Article Block -->
                                         <div class="block block-alt-noborder">
                                             <!-- Article Content -->
-                                            <article>                                         
+                                            <article>
                                                 {{ HTML::image('img/resources/misc/logo.jpg', 'Hospital Santa Catalina', array( 'class' => 'img-responsive' ) ) }}
                                                 <br>
                                                 <div class="sub-header"></div>
                                                 {{ HTML::image('img/resources/misc/cert.jpg', 'Hospital Santa Catalina', array( 'class' => 'img-responsive center-block' ) ) }}
                                                 <p>
-                                                    Somos un Hospital dentro del proceso de certificación que da cuenta de como aseguramos la calidad y seguridad en la atención 
-                                                    del paciente y su familia,dentro de estándares normativos como un que hacer cotidiano y como parte de nuestra cultura 
+                                                    Somos un Hospital dentro del proceso de certificación que da cuenta de como aseguramos la calidad y seguridad en la atención
+                                                    del paciente y su familia,dentro de estándares normativos como un que hacer cotidiano y como parte de nuestra cultura
                                                     organizacional.
                                                 </p>
 
                                                 <p>
-                                                    Contamos con personal médico de guardia y de urgencias las 24 horas del día. Más de 42 médicos en Staff de especialistas 
+                                                    Contamos con personal médico de guardia y de urgencias las 24 horas del día. Más de 42 médicos en Staff de especialistas
                                                     para la oportuna atención ante eventos inesperados como son:
                                                 </p>
                                                 <ul>
@@ -287,35 +287,46 @@
                                                     <li>Oncología</li>
                                                     <li>Entre otros</li>
                                                 </ul>
- 
+
                                                 <p>
-                                                    Hoy día tenemos convenios institucionales con el seguro popular, mutuales, aseguradoras, compañías privadas que amplían la 
-                                                    captación de pacientes que requieren ser atendidos por médicos que garantizan, así mismo existen diferentes tipos de paquetes 
+                                                    Hoy día tenemos convenios institucionales con el seguro popular, mutuales, aseguradoras, compañías privadas que amplían la
+                                                    captación de pacientes que requieren ser atendidos por médicos que garantizan, así mismo existen diferentes tipos de paquetes
                                                     o presupuestos, desde maternidad, cirugía general y otras especialidades.
                                                 </p>
 
                                                 <p>
-                                                    Farmacia Hospitalaria es una unidad de preparación de mezclas simples, garantizando la calidad y seguridad en la aplicación 
+                                                    Farmacia Hospitalaria es una unidad de preparación de mezclas simples, garantizando la calidad y seguridad en la aplicación
                                                     de cada uno de los medicamentos prescritos por nuestro personal médico.
                                                 </p>
 
                                                 <p>
-                                                    Nutrición clínica, realizando un tamizaje nutricional al ingreso todos nuestros pacientes para detectar problemas de 
+                                                    Nutrición clínica, realizando un tamizaje nutricional al ingreso todos nuestros pacientes para detectar problemas de
                                                     desnutrición que requieren seguimiento y orientación.
                                                 </p>
 
                                                 <p>
-                                                    El servicio de Ingeniería Biomédica de planta apoya los servicios integrales de atención medica y verifica el funcionamiento 
+                                                    El servicio de Ingeniería Biomédica de planta apoya los servicios integrales de atención medica y verifica el funcionamiento
                                                     correcto del equipamiento médico.
                                                 </p>
 
                                                 <p>
-                                                    Existen el Comité de Calidad y Seguridad del Paciente del cual dependen los comités de operación hospitalaria; el Comité de 
-                                                    infecciones nosocomiales, comité de expediente clínico, el comité de Farmacia y Terapéutica, de mortalidad y mortalidad 
-                                                    materno infantil, de bioética hospitalaria, desastres y comisión de seguridad e higiene, como apoyo al cuerpo de gobierno 
-                                                    y a la dirección para tomar conocimiento de medición por indicadores y su control, así como elementos de detección de riesgos, 
+                                                    Existen el Comité de Calidad y Seguridad del Paciente del cual dependen los comités de operación hospitalaria; el Comité de
+                                                    infecciones nosocomiales, comité de expediente clínico, el comité de Farmacia y Terapéutica, de mortalidad y mortalidad
+                                                    materno infantil, de bioética hospitalaria, desastres y comisión de seguridad e higiene, como apoyo al cuerpo de gobierno
+                                                    y a la dirección para tomar conocimiento de medición por indicadores y su control, así como elementos de detección de riesgos,
                                                     acciones de mejora.
                                                 </p>
+
+
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                <center>
+
+                                                <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/L6wl7C17nTE" frameborder="0" allowfullscreen></iframe>
+
+                                                </center>
+                                                </div>
+
 
                                             </article>
                                             <!-- END Article Content -->
@@ -328,11 +339,11 @@
                                     <!-- Article Content -->
                                         <!-- Article Block -->
                                         <div class="block block-alt-noborder">
-                                            @foreach($services as $service)  
+                                            @foreach($services as $service)
                                                 <div class="row">
                                                     <div class="col-sm-8">
                                                         <h1>{{ $service->service }}</h1>
-                                                        <p>{{ $service->description }}</p>    
+                                                        <p>{{ $service->description }}</p>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         {{ HTML::image( $service->image, $service->service, array( 'class' => 'img-responsive') ) }}
@@ -349,11 +360,11 @@
                                     <!-- Article Content -->
                                         <!-- Article Block -->
                                         <div class="block block-alt-noborder">
-                                            @foreach($budgets as $budget)  
+                                            @foreach($budgets as $budget)
                                                 <div class="row">
                                                     <div class="col-sm-7">
                                                         <h1>{{ $budget->name }}</h1>
-                                                        <p>{{ $budget->description }}</p>    
+                                                        <p>{{ $budget->description }}</p>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         {{ HTML::image( $budget->image, $budget->service, array( 'class' => 'img-responsive') ) }}
@@ -529,7 +540,7 @@
                                         <!-- END Article Block -->
                                     <!-- END Article Content -->
                                 </div>
-                                
+
                             </div>
                             <!-- END Search Styles Content -->
                             </div>
@@ -566,7 +577,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="pull-right">
-                                Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://www.hospitalcatalina.com" target="_blank">Mario Badillo</a>    
+                                Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://www.hospitalcatalina.com" target="_blank">Mario Badillo</a>
                             </div>
                         </div>
                     </div>
@@ -579,8 +590,8 @@
         <!-- END Page Container -->
 
         <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
-        <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>                
-        
+        <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
         <!-- END User Settings -->
 
         <!-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) -->
@@ -594,8 +605,8 @@
 
         {{ HTML::script( 'js/pages/tablesDatatables.js' ) }}
         <script>
-            $(function(){ 
-                TablesDatatables.init(); 
+            $(function(){
+                TablesDatatables.init();
                 setTimeout(function(){ $("#slider-right").trigger("click"); }, 8000);
             });
             </script>
