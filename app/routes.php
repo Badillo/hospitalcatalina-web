@@ -59,16 +59,19 @@ Route::group(['prefix' => 'admin', 'before' => 'check_auth'], function () {
     Route::get('/slider', function () {
         return View::make('admin.slider');
     });
-    Route::get('/speciality', function () {
-        return View::make('admin.speciality');
-    });
-    Route::get('/user', 'UsersController@create');
 
+    Route::get('/speciality', 'SpecialitiesController@create');
+    Route::group(['prefix' => 'speciality'], function () {
+        Route::post('/save', 'SpecialitiesController@store');
+        Route::post('/delete', 'SpecialitiesController@destroy');
+    });
+
+    Route::get('/user', 'UsersController@create');
     Route::group(['prefix' => 'user'], function () {
         Route::post('/save', 'UsersController@store');
         Route::post('/update', 'UsersController@update');
         Route::post('/show', 'UsersController@show');
-        Route::post('/delete', 'UsersController@destroy');
+        Route::post('/activate', 'UsersController@activate');
     });
 
 /*

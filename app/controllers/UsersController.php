@@ -23,7 +23,7 @@ class UsersController extends \BaseController
      */
     public function create()
     {
-        $users = User::all();
+        $users = User::withTrashed()->get();
 
         return View::make('admin.user', array('users' => $users));
 
@@ -62,9 +62,19 @@ class UsersController extends \BaseController
     public function show()
     {
         $id   = Input::all()['id'];
-        $user = User::find($id);
+        $user = User::withTrashed()->find($id);
+        $status = "";
+        if($user->trashed())
+        {
+            $status = "Desactivado";
+        }
+        else
+        {
+            $status = "Activado";
+        }
+        
 
-        return Response::json(array('status' => true, 'data' => $user));
+        return Response::json(array('status' => true, 'data' => $user, 'user_status' => $status));
     }
 
     /**
@@ -87,20 +97,24 @@ class UsersController extends \BaseController
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update()
     {
+        $id   = Input::all()['id'];
+        $data = Input::all();
 
         $user = User::findOrFail($id);
 
-        $validator = Validator::make($data = Input::all(), User::$rules);
-
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput();
+        if (!$user->isValid($data)) {
+            return Response::json(array('status' => false, 'dataError' => $user->getListErrors()), 500);
         }
 
-        $user->update($data);
+        $user->name     = $data['name'];
+        $user->username = $data['username'];
+        $user->password = Hash::make($data['password']);
 
-        return Redirect::route('users.index');
+        $user->save();
+
+        return Response::json(array('status' => true));
     }
 
     /**
@@ -109,12 +123,23 @@ class UsersController extends \BaseController
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function activate()
     {
+        $id   = Input::all()['id'];
+        $user = User::withTrashed()->findOrFail($id);
+        
+        if($user->trashed())
+        {
+            $user->restore();
+            $status = "Activado";    
+        }
+        else
+        {
+            $user->delete();
+            $status = "Desactivado";    
+        }
 
-        User::destroy($id);
-
-        return Redirect::route('users.index');
+        return Response::json(array('status' => true, 'user_status' => $status));
     }
 
 }

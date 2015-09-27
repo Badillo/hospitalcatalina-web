@@ -62,9 +62,7 @@
                         </select>
                         </div>
                         <div class="col-md-4">
-
-                        //Pendiente actualizar datos de usuarios y cambiar color de boton de acuerdo a status del usuario
-                            {{ Form::button('Desactivar Usuario', array('class' => 'btn btn-sm btn-danger', 'id' => 'btn-activate-user' ) ) }}
+                            {{ Form::button('Desactivar Usuario', array('class' => 'btn btn-sm', 'id' => 'btn-activate-user', 'disabled' => 'disabled' ) ) }}
                         </div>
                     </div>
                     <div class="form-group">
@@ -93,7 +91,7 @@
                     </div>
                     <div class="form-group form-actions">
                         <div class="col-md-6 col-md-offset-3">
-                            {{ Form::button('<i class="fa fa-angle-right"></i> Registrar usuario', array( 'type' => 'submit', 'class' => 'btn btn-sm btn-primary', 'id' => 'btn-update-user' ) ) }}
+                            {{ Form::button('<i class="fa fa-angle-right"></i> Actualizar usuario', array( 'type' => 'submit', 'class' => 'btn btn-sm btn-primary', 'id' => 'btn-update-user' ) ) }}
                             {{ Form::button('<i class="fa fa-repeat"></i> Limpiar', array( 'type' => 'reset', 'class' => 'btn btn-sm btn-warning' ) ) }}
                         </div>
                     </div>
