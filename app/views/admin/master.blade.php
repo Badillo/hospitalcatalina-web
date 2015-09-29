@@ -153,5 +153,9 @@
             var main_path = '{{ URL::to("/") }}';
             $(function(){ Control.init(); });
         </script>
+
+        @section('scripts')
+
+        @show
     </body>
 </html>

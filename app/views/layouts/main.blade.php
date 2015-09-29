@@ -134,6 +134,7 @@
                                 <!-- With Animation and no Info Carousel Block -->
                                 <div class="row">
                                     <div class="col-sm-3">
+                                    <!--
                                         <h2 class="text-center"><strong>Misión</strong></h2><br>
                                         <div class="text-justify">
                                             <p>
@@ -143,12 +144,18 @@
                                                 confiable y recomendable.
                                             </p>
                                         </div>
+                                    -->
                                     </div>
                                     <div class="col-sm-6 ">
                                         <div class="block">
-                                            <!-- With Animation and no Info Carousel Content -->
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                                <center>
+                                                    <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/TNoHh8NuxbE" frameborder="0" allowfullscreen></iframe>
+                                                </center>
+                                        </div>
+                                            <!-- With Animation and no Info Carousel Content 
                                             <div id="main_carousel" class="carousel slide center-block">
-                                                <!-- Wrapper for slides -->
+                                                <!-- Wrapper for slides 
                                                 <div class="carousel-inner">
 
                                                     <?php $flag = 0?>
@@ -164,20 +171,21 @@
                                                 </div>
                                                 <!-- END Wrapper for slides -->
 
-                                                <!-- Controls -->
+                                                <!-- Controls 
                                                 <a id="slider-left" class="left carousel-control" href="#main_carousel" data-slide="prev">
                                                     <span><i class="fa fa-chevron-left"></i></span>
                                                 </a>
                                                 <a id="slider-right" class="right carousel-control" href="#main_carousel" data-slide="next">
                                                     <span><i class="fa fa-chevron-right"></i></span>
                                                 </a>
-                                                <!-- END Controls -->
+                                                <!-- END Controls
                                             </div>
                                             <!-- END With Animation and no Info Carousel Content -->
                                         </div>
                                     <!-- END Alternative Carousel -->
                                     </div>
                                     <div class="col-sm-3">
+                                    <!--
                                         <h2 class="text-center"><strong>Visión</strong></h2><br>
                                         <div class="text-justify">
                                             <p>
@@ -187,6 +195,7 @@
                                                 sus usuarios.
                                             </p>
                                         </div>
+                                    -->
                                     </div>
                                 </div>
 
@@ -474,7 +483,32 @@
                                                     En el año 2012 fue enviada la inscripción para la certificación por el Consejo de Salubridad General, se viven los procesos que garantizan el cumplimiento de estándares internacionales y nacionales que dan forma a nuestro modelo de calidad y la seguridad en la atención médica de nuestros pacientes y sus familiares.
                                                     Hoy nuestra institución se percibe en la sociedad con una confianza renovada y de ello dan cuenta los múltiples convenios institucionales y empresariales firmados a la fecha, que mantienen hoy alianzas estratégicas de mutuo beneficio con particulares, partidos políticos, aseguradoras de gastos médicos mayores y siniestros, mutuales del transporte público, seguro popular, el fondo de protección contra gastos catastróficos del gobierno federal para la atención de Cáncer y cajas populares, cumpliendo así nuestra misión y nuestro compromiso con la comunidad a la cual servimos.
                                                 </p>
+
+                                                <h2 class="text-left"><strong>Misión</strong></h2><br>
+                                                <div class="text-justify">
+                                                    <p>
+                                                        Brindamos servicios especializados de salud otorgados por capital humano
+                                                        comprometido y capacitado, en un entorno de trabajo digno, basados en un
+                                                        sistema de calidad y seguridad a nuestros usuarios, con una atención
+                                                        confiable y recomendable.
+                                                    </p>
+                                                </div>
+
+                                                <h2 class="text-left"><strong>Visión</strong></h2><br>
+                                                <div class="text-justify">
+                                                    <p>
+                                                        Nos visulaizamos en 2017 Posicionados como un hospital de especialidades,
+                                                        consolidado por su equipo humano, infraestructura, sistema de calidad y
+                                                        seguridad eficiente que genere rentabilidad a sus socios y beneficios a
+                                                        sus usuarios.
+                                                    </p>
+                                                </div>
                                             </article>
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <center>
+                                                    <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/L6wl7C17nTE" frameborder="0" allowfullscreen></iframe>
+                                                </center>
+                                            </div>
                                         </div>
                                         <!-- END Article Block -->
                                     <!-- END Article Content -->

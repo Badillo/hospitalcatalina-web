@@ -56,8 +56,11 @@ Route::group(['prefix' => 'admin', 'before' => 'check_auth'], function () {
     Route::get('/service', function () {
         return View::make('admin.service');
     });
-    Route::get('/slider', function () {
-        return View::make('admin.slider');
+    Route::get('/slider', 'SliderController@create');
+    Route::group(['prefix' => 'slider'], function () {
+        Route::post('/save', 'SliderController@store');
+        Route::post('/delete', 'SliderController@destroy');
+        Route::post('/upload-slider', 'SliderController@upload');
     });
 
     Route::get('/speciality', 'SpecialitiesController@create');
