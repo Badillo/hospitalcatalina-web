@@ -115,6 +115,7 @@
 
             <!-- Main Container -->
             <div id="main-container">
+                <!--
                 <header class="navbar navbar-default navbar-fixed-top">
                      <div id="horizontal-menu-collapse" class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
@@ -124,6 +125,7 @@
                             </ul>
                         </div>
                 </header>
+                -->
                 <!-- END Header -->
 
                 <!-- Page content -->
